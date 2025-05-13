@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -5,39 +7,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vídeo Visionário</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       background-color: #0d0d0d;
       color: white;
       font-family: 'Segoe UI', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 40px 20px;
       text-align: center;
+      overflow-x: hidden;
+      padding-bottom: 60px;
     }
-
-    h1 {
-      font-size: 3rem;
-      color: #ffffff;
-      margin-bottom: 1rem;
+    img.logo {
+      width: 180px;
+      margin: 40px auto 20px;
+      display: block;
     }
-
+    h2 {
+      font-size: 2rem;
+      margin: 30px 0 10px;
+    }
     p {
-      font-size: 1.25rem;
-      max-width: 600px;
+      font-size: 1.1rem;
       color: #cfcfcf;
-      margin-bottom: 2rem;
+      margin: 0 auto 20px;
+      max-width: 600px;
+      padding: 0 20px;
     }
-
-    a.cta-button {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 30px;
+    }
+    ul li {
+      margin: 10px 0;
+      font-size: 1rem;
+    }
+    .cta-button {
       background-color: #6a00ff;
       color: white;
       font-weight: bold;
@@ -48,31 +52,107 @@
       text-decoration: none;
       transition: background 0.3s ease;
     }
-
-    a.cta-button:hover {
+    .cta-button:hover {
       background-color: #5300d6;
     }
-
-    footer {
-      margin-top: 4rem;
-      font-size: 0.85rem;
-      color: #777;
+    .video-wrapper {
+      width: 56.25vw;
+      max-width: 420px;
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      margin: 0 auto;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 420px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+    button {
+      padding: 10px;
+      border: none;
+      background: #d234ee;
+      color: white;
+      font-size: 18px;
+      border-radius: 50%;
+      cursor: pointer;
+      pointer-events: all;
+      width: 50px;
+      height: 50px;
+    }
+    .btn-left { position: absolute; left: -60px; }
+    .btn-right { position: absolute; right: -60px; }
+    @media (max-width: 768px) {
+      .video-wrapper {
+        width: 90vw;
+        height: 75vh;
+      }
+      .btn-left { left: 10px; }
+      .btn-right { right: 10px; }
     }
   </style>
 </head>
 <body>
-  <main>
-    <h1>VÍDEO VISIONÁRIO</h1>
-    <p>Aprenda a dominar o audiovisual com o que você já tem em mãos: seu celular. Crie vídeos que vendem, engajam e impressionam — mesmo que você esteja começando do zero.</p>
-    <a href="https://pay.hotmart.com/I85160787R?_hi=eyJjaWQiOiIxNzM0NDAxMTA2OTM4OTU4Njg1NzEwNzY5OTgzMTAwIiwiYmlkIjoiMTczNDQwMTEwNjkzODk1ODY4NTcxMDc2OTk4MzEwMCIsInNpZCI6ImI1MzZmNGY4YjM3NjQ0YjBhMWE1OTFhN2U0MDgxZGUxIn0=.1747106312090" 
-       class="cta-button" 
-       target="_blank">
-      QUERO COMEÇAR AGORA
-    </a>
-  </main>
 
-  <footer>
-    &copy; 2025 Vídeo Visionário. Todos os direitos reservados.
-  </footer>
+  <img src="assets/logo.png" alt="Logo Vídeo Visionário" class="logo" />
+
+  <div class="video-wrapper">
+    <iframe id="videoFrame" src="https://www.youtube.com/embed/2V4471POc5I?autoplay=1&mute=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <div class="controls">
+      <button class="btn-left" onclick="prevVideo()">&#10094;</button>
+      <button class="btn-right" onclick="nextVideo()">&#10095;</button>
+    </div>
+  </div>
+
+  <h2>Aprenda a fazer vídeos criativos usando apenas o celular.</h2>
+  <p>O que você vai aprender com o Vídeo Visionário 1.0?</p>
+
+  <ul>
+    <li>🎥 Módulo 1 – Gravação: Técnicas práticas com seu celular</li>
+    <li>✂️ Módulo 2 – Edição: Transforme vídeos simples em arte</li>
+    <li>🎁 Bônus: Conteúdos extras liberados pra você</li>
+  </ul>
+
+  <a href="https://pay.hotmart.com/I85160787R?_hi=eyJjaWQiOiIxNzM0NDAxMTA2OTM4OTU4Njg1NzEwNzY5OTgzMTAwIiwiYmlkIjoiMTczNDQwMTEwNjkzODk1ODY4NTcxMDc2OTk4MzEwMCIsInNpZCI6ImI1MzZmNGY4YjM3NjQ0YjBhMWE1OTFhN2U0MDgxZGUxIn0=.1747106312090"
+     class="cta-button" target="_blank">
+    QUERO COMEÇAR AGORA
+  </a>
+
+  <script>
+    const videos = [
+      "https://www.youtube.com/embed/2V4471POc5I",
+      "https://www.youtube.com/embed/5Nejicj_K20",
+      "https://www.youtube.com/embed/n09qmm5Cl8I",
+      "https://www.youtube.com/embed/O253Ptuw0J0"
+    ];
+
+    let currentIndex = 0;
+    function updateVideo() {
+      document.getElementById("videoFrame").src = videos[currentIndex] + "?autoplay=1&mute=1";
+    }
+
+    function nextVideo() {
+      currentIndex = (currentIndex + 1) % videos.length;
+      updateVideo();
+    }
+
+    function prevVideo() {
+      currentIndex = (currentIndex - 1 + videos.length) % videos.length;
+      updateVideo();
+    }
+  </script>
+
 </body>
 </html>
